@@ -1,0 +1,37 @@
+@import url(skeleton.css);
+@import url(elements.css);
+
+:root {
+  --font1: 'Noto Sans Lao', system-ui, sans-serif;
+  --font2: 'Roboto Mono', monospace, system-ui, sans-serif;
+  --space: 1.5rem;
+  --radius: .7rem;
+  --text: #0a0915;
+  --background: linear-gradient(90deg, #ebf8edb7 0%, #e3ecfc 100%);
+  --shadow: 0 8px 32px 0 rgba(66, 59, 134, 0.205);
+  --primary: #000080;
+  --secondary: #474849;
+  --accent: #007f80;
+  --green: #45d25a;
+  --red: #dc3243;
+  --yellow: #f2c94c;
+  --blue: #2495ca;
+  --dark: #0e0e0e;
+  --light: #fefefe;
+  --contrast: var(--light)
+}
+
+:root[data-theme=dark] {
+  --text: #dbdbdb;
+  --background: linear-gradient(90deg, #1c2025 0%, #171a1d 100%);
+  --primary: #75a5ff;
+  --secondary: #c9c9c9;
+  --accent: #6ec1c1;
+  --green: #45d25a;
+  --red: #dc3243;
+  --yellow: #f2c94c;
+  --blue: #2495ca;
+  --dark: #2b2b2b;
+  --light: #f1f2e9;
+  --contrast: var(--dark)
+}

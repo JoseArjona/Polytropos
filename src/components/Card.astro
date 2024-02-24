@@ -1,0 +1,52 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+  img: string;
+}
+
+const { href, title, body, img } = Astro.props;
+---
+
+<article>
+  <a class="card f-col br-accent gap-sm" href={href} target="_blank">
+    <header>
+      <picture class="cover">
+        <img src={img} alt=`Imagen de portada de la herramienta ${title}` />
+      </picture>
+    </header>
+    <div class="pl pb">
+      <h3>
+        {title}
+      </h3>
+      <p>
+        {body}
+      </p>
+    </div>
+    <footer class="content">
+      <ul class="flex f-row center gap-nm">
+        <li class="chip">a</li>
+        <li class="chip">a</li>
+      </ul>
+    </footer>
+  </a>
+</article>
+<style>
+  a {
+    text-decoration: none;
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.041);
+    color: inherit;
+    overflow: hidden;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  img {
+    height: 200px;
+  }
+</style>
