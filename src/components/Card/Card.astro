@@ -1,12 +1,15 @@
 ---
+import Tags from "./Tags.astro";
+
 interface Props {
   title: string;
   body: string;
   href: string;
   img: string;
+  tags: string[];
 }
 
-const { href, title, body, img } = Astro.props;
+const { href, title, body, img, tags } = Astro.props;
 ---
 
 <article>
@@ -16,7 +19,7 @@ const { href, title, body, img } = Astro.props;
         <img src={img} alt=`Imagen de portada de la herramienta ${title}` />
       </picture>
     </header>
-    <div class="pl pb">
+    <div class="pl">
       <h3>
         {title}
       </h3>
@@ -24,12 +27,7 @@ const { href, title, body, img } = Astro.props;
         {body}
       </p>
     </div>
-    <footer class="content">
-      <ul class="flex f-row center gap-nm">
-        <li class="chip">a</li>
-        <li class="chip">a</li>
-      </ul>
-    </footer>
+    <Tags tags={tags} />
   </a>
 </article>
 <style>
@@ -40,12 +38,9 @@ const { href, title, body, img } = Astro.props;
     background-color: rgba(255, 255, 255, 0.041);
     color: inherit;
     overflow: hidden;
+    max-width: 400px;
   }
 
-  ul {
-    padding: 0;
-    margin: 0;
-  }
   img {
     height: 200px;
   }

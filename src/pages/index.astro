@@ -1,11 +1,11 @@
 ---
-import Card from "../components/Card.astro";
+import Card from "../components/Card/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import Projects from "../data/projects.json";
 ---
 
 <Layout title="Polytropos - Conjunto de Utilidades">
-  <main class="flex f-col center middle gap-sm">
+  <main class="flex f-col center gap-sm">
     <article>
       <header class="txt-center">
         <h1 class="display-2">
@@ -13,13 +13,13 @@ import Projects from "../data/projects.json";
         </h1>
         <div>
           <p class="txt-bg">Herramientas y Utilidades Random</p>
-      <!--     <p class="txt-md">¿Porqué No?</p> -->
+          <!--     <p class="txt-md">¿Porqué No?</p> -->
         </div>
       </header>
     </article>
-    <section class="container">
+    <section class="flex f-col center middle">
       <h2 class="txt-center txt-secondary pb">Utilidades Disponibles:</h2>
-      <section class="grid col-3 md-col-2 sm-col-1">
+      <section class="grid content col-3 md-col-2 sm-col-1">
         {
           Projects.map((project) => (
             <Card
@@ -27,6 +27,7 @@ import Projects from "../data/projects.json";
               body={project.body}
               href={project.href}
               img={project.img}
+              tags={project.tags}
             />
           ))
         }

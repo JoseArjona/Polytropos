@@ -1,0 +1,41 @@
+---
+interface Props {
+  tags: string[];
+}
+
+const { tags } = Astro.props;
+
+const colorClases = ["primary", "green", "accent", "blue"];
+
+const chipsTags = [];
+
+tags.forEach((tag) => {
+  const randomIndex = Math.floor(Math.random() * colorClases.length);
+  const randomClass = colorClases[randomIndex];
+  let chip = {
+    tag: tag,
+    style: `chip txt-contrast br-none ${randomClass}`,
+  };
+  chipsTags.push(chip);
+});
+---
+
+<footer>
+  <ul class="flex f-row f-wrap gap-nm">
+    {chipsTags.map((chip) => <li class={chip.style}>{chip.tag}</li>)}
+  </ul>
+</footer>
+
+<style>
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  footer {
+    padding: 0.55em;
+  }
+
+  ul li.chip {
+    font-size: 0.6em;
+  }
+</style>
