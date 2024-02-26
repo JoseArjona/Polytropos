@@ -1,0 +1,18 @@
+label>input {
+  display: none;
+}
+
+#forDevs:checked+#label-dev {
+  background: var(--primary) !important;
+  color: var(--contrast);
+}
+
+#forEveryone:checked+#label-everyone {
+  background: var(--green) !important;
+  color: var(--contrast);
+}
+
+#all:checked+#label-all {
+  background: var(--accent) !important;
+  color: var(--contrast);
+}

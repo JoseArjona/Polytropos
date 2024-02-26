@@ -1,6 +1,6 @@
 ---
 import Card from "../components/Card/Card.astro";
-import Filter from "../components/Filter/Filter.astro";
+import { Filter } from "../components/Filter/Filter.jsx";
 import Layout from "../layouts/Layout.astro";
 import Projects from "../data/projects.json";
 ---
@@ -21,9 +21,9 @@ import Projects from "../data/projects.json";
     <section class="flex f-col center middle">
       <header class="flex f-col center">
         <h2 class="txt-center txt-secondary pb">Utilidades Disponibles:</h2>
-        <Filter />
+        <Filter client:only="react" />
       </header>
-      <section class="grid content col-3 md-col-2 sm-col-1">
+      <section id="projects" class="grid content col-3 md-col-2 sm-col-1">
         {
           Projects.map((project) => (
             <Card

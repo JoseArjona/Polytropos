@@ -35,3 +35,7 @@
   --light: #f1f2e9;
   --contrast: var(--dark)
 }
+
+.hidden {
+  display: none;
+}
