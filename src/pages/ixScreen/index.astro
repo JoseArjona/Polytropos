@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="ixScren">
+  <main class="mt">
+    <section class="flex f-col mt center middle gap-sm">
+      <header class="mt pt txt-center flex f-col">
+        <div>
+          <h2>ixScreen</h2>
+          <p>Cita tus tweets de forma moderna y fácil.</p>
+        </div>
+        <button class="btn center accent txt-contrast">¿Como funciona?</button>
+      </header>
+      <section class="flex f-col mt">
+        <form action="">
+          <label class="input flex f-col gap-nm">
+            Escribe la Url del tweet a citar
+            <input
+              style="max-width: 100%"
+              type="text"
+              placeholder="url del tweet"
+            />
+          </label>
+        </form>
+        <article>
+          https://x.com/DanikRM_/status/1762086944295600503?s=20
+        </article>
+      </section>
+      <aside class="flex f-col mt">opciones</aside>
+    </section>
+  </main>
+</Layout>
