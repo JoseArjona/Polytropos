@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Spinner from './Spinner.jsx';
+import Spinner from '../Global/Spinner.jsx';
+import { copyClipboard } from "../../lib/utils.ts";
 
 const API_SHORTEN = "https://ulvis.net/API/write/get?url=";
 const CUSTOM_URL = "&custom=poly";
@@ -24,7 +25,13 @@ export const Form = () => {
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(shortenUrl);
+    copyClipboard(shortenUrl)
+  }
+
+  const clean = () =>  {
+    setLoading(false)
+    setShortenUrl('')
+    document.querySelector('form').reset()
   }
 
   return (
@@ -53,6 +60,7 @@ export const Form = () => {
         {shortenUrl && <p className="txt-sm">Tu url acortada es: </p> }
         {shortenUrl && <a className="txt-blue" href={shortenUrl}  target="_blank" onClick={handleCopy}>{shortenUrl}</a>}
         {shortenUrl && <p className="txt-sm txt-secondary">Haz click en la url para copiarla</p>}
+        {shortenUrl && <button className="btn transparent br-secondary" onClick={clean}>Nuevo</button>}
       </article>
     </section>
   );
