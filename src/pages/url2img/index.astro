@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Shorten } from "../../components/Shorten/Shorten.jsx";
+import { Screen2Img } from "../../components/Url2img/Screen2Img.jsx";
 import { Toaster } from "react-hot-toast";
 ---
 
@@ -10,11 +10,13 @@ import { Toaster } from "react-hot-toast";
     <section class="flex f-col mt center middle gap-sm">
       <header class="pt txt-center flex f-col">
         <div>
-          <h2>PolyShorten</h2>
-          <p>Acortador de urls.</p>
+          <h2>Url2Image</h2>
+          <p>
+            Obtén una captura completa de una pagina web a partir de una url.
+          </p>
         </div>
       </header>
-      <Shorten client:only="react" />
+      <Screen2Img client:only="react" />
     </section>
   </main>
 </Layout>

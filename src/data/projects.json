@@ -33,14 +33,14 @@
     ]
   },
   {
-    "title": "ixScreen",
-    "body": "Lee, analiza y crea carpetas para diferentes tipos de archivos.",
-    "href": "/ixScreen",
-    "img": "https://github.com/JoseArjona/Ordenode/raw/main/Ordenode.png",
+    "title": "Url2Image",
+    "body": "Toma capturas completas de tus paginas web.",
+    "href": "/url2img",
+    "img": "https://cdn.statically.io/og/theme=dark,fontsize=120px/🔗Url2Image📷.png",
     "tags": [
-      "x/twitter",
-      "citar tweets",
-      "Para todos"
+      "Capturas",
+      "url2image",
+      "Para Todos"
     ]
   }
 ]
