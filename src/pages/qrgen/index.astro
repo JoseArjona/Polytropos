@@ -1,22 +1,20 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { Screen2Img } from "../../components/Url2img/Screen2Img.jsx";
+import { Qrgen } from "../../components/Qrgen/Qrgen.jsx";
 import { Toaster } from "react-hot-toast";
 ---
 
-<Layout title="URL2IMG">
+<Layout title="QRGEN">
   <div><Toaster client:only="react" /></div>
   <main class="container">
     <section class="flex f-col mt center middle gap-sm">
       <header class="pt txt-center flex f-col">
         <div>
-          <h2>Url2Image</h2>
-          <p>
-            Obtén una captura completa de una pagina web a partir de una url.
-          </p>
+          <h2>QRGEN</h2>
+          <p>Genera un código qr personalizable.</p>
         </div>
       </header>
-      <Screen2Img client:only="react" />
+      <Qrgen client:only="react" />
     </section>
   </main>
 </Layout>

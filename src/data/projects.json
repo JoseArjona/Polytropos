@@ -40,7 +40,18 @@
     "tags": [
       "Capturas",
       "url2image",
-      "Para Todos"
+      "Para todos"
+    ]
+  },
+  {
+    "title": "QRGEN",
+    "body": "Genera códigos QR sencillos",
+    "href": "/qrgen",
+    "img": "https://cc-og-image.vercel.app/QRGEN%23%EF%B8%8F%E2%83%A3.png?theme=light&md=0&fontFamily=roboto-condensed&fontSize=200px&images=https%3A%2F%2Fcc-vocabulary.netlify.app%2Flogos%2Fcc%2Flettermark.svg%23lettermark",
+    "tags": [
+      "qr-code",
+      "generador",
+      "Para todos"
     ]
   }
 ]
