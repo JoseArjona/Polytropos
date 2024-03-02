@@ -1,11 +1,7 @@
-
-
-export const Form = ({submitForm,bg,color,textBtn="Enviar", children}) => {
-   
-
+export const Form = ({ submitForm, bg, color, textBtn = 'Enviar', children }) => {
   const styleClass = `btn center ${bg} ${color}`
 
-  return(
+  return (
     <form className="flex f-col gap-bg" onSubmit={submitForm}>
         {children}
         <div className="flex f-col">

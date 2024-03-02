@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Spinner from '../Global/Spinner.jsx'
 import { Form } from '../Global/Form.jsx'
 import toast from 'react-hot-toast'
+import { ImagePreviewer } from '../Global/ImagePreviewer.jsx'
 
 const API_IMG = 'https://image.thum.io/get/png/'
 
@@ -66,12 +67,9 @@ export const Screen2Img = () => {
       {
         loading && <Spinner />
        }
-      <article>
-        <picture className="mt px" style={{ aspectRatio: '16/9', cursor: 'pointer' }}>
-       { imageUrl && <img src={imageUrl} alt="Imagen capturada" className="radius" style={{ maxWidth: '100%' }} /> }
-        </picture>
-       {imageUrl && <p className="txt-sm txt-secondary">Haz click en la imagen para copiarla</p> }
-      </article>
+      {
+        imageUrl && <ImagePreviewer imageUrl={imageUrl} fileName="screenshot" />
+      }
     </section>
 
   )
