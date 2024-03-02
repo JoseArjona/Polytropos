@@ -15,9 +15,9 @@ export const Qrgen = () => {
     const data = new FormData(e.target)
     const info = data.get('info')
     const size = data.get('size')
-    const color = data.get('color') || ''
-    const bgcolor = data.get('bgcolor') || ''
-    const style = (color === '') ? '' : `&color=${color.substring(1)}&bgcolor=${bgcolor.substring(1)}`
+    const color = data.get('color') || '000'
+    const bgcolor = data.get('bgcolor') || 'fff'
+    const style = `&color=${color.substring(1)}&bgcolor=${bgcolor.substring(1)}`
     const qrImage = API_IMG + info + '&size=' + `${size}x${size}` + style
     console.log(qrImage)
     if (!qrImage) {
@@ -67,11 +67,11 @@ export const Qrgen = () => {
             <div className="flex f-row between" style={{ padding: '8px' }}>
             <div className="flex f-row">
               Color
-            <input className="contrast br-none " name="color" type="color" />
+            <input className="contrast br-none " name="color" type="color" defaultValue="#000000" />
             </div>
             <div className="flex f-row">
               Fondo
-            <input className="contrast br-none" name="bgcolor" type="color" />
+            <input className="contrast br-none" name="bgcolor" type="color" defaultValue="#ffffff" />
             </div>
             </div>
           </label>
