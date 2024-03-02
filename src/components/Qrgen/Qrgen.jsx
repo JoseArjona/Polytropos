@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import Spinner from '../Global/Spinner.jsx'
 import { Form } from '../Global/Form.jsx'
 import toast from 'react-hot-toast'
@@ -8,6 +8,35 @@ const API_IMG = 'https://api.qrserver.com/v1/create-qr-code/?data='
 export const Qrgen = () => {
   const [loading, setLoading] = useState(false)
   const [imageUrl, setImageUrl] = useState()
+  const downloadRef = useRef(null)
+
+  const fetchImage = async (url) => {
+    const response = await fetch(url)
+    const blob = await response.blob()
+    return blob
+  }
+
+  const downloadImage = async (imageUrl, downloadRef) => {
+    try {
+      const blob = await fetchImage(imageUrl)
+      const url = URL.createObjectURL(blob)
+      downloadRef.current.href = url
+      downloadRef.current.download = `qr_code_${Date.now()}.png`
+      downloadRef.current.click()
+      URL.revokeObjectURL(url) // Liberar memoria después de descarga
+    } catch (error) {
+      console.error('Error al Procesar la imagen:', error)
+      toast('Error, No se pudo Procesar la imagen, Descarga la imagen de forma manual',
+        {
+          icon: '✖️',
+          style: {
+            borderRadius: '10px',
+            background: 'var(--background)',
+            color: 'var(--red)'
+          }
+        })
+    }
+  }
 
   const submitForm = async (e) => {
     e.preventDefault()
@@ -83,10 +112,11 @@ export const Qrgen = () => {
         loading && <Spinner />
        }
       <article>
-        <picture className="mt px flex center" style={{ cursor: 'pointer' }}>
-       { imageUrl && <img src={imageUrl} alt="QR generado" style={{ maxWidth: '100%' }} /> }
+        <picture className="mt px flex center" >
+       { imageUrl && <img src={imageUrl} alt="QR generado" style={{ maxWidth: '100%', cursor: 'pointer' }} onClick={() => downloadImage(imageUrl, downloadRef)}/> }
         </picture>
        {imageUrl && <p className="txt-sm txt-secondary">Haz click en la imagen para copiarla</p> }
+       <a href="" ref={downloadRef} style={{ display: 'none' }} target="_blank" rel="noreferrer" ></a>
       </article>
     </section>
 
