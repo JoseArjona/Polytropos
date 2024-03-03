@@ -1,37 +1,35 @@
-import {useState, useEffect  } from 'react'
+import { useState, useEffect } from 'react'
 
-
-export default function Switch(){
+export default function Switch () {
   const [isCheck, setCheck] = useState(false)
 
-  const enabledDarkMode= () => {
-    localStorage.setItem("dark",true)
-    document.documentElement.setAttribute("data-theme", "dark");
-    setCheck(true);
+  const enabledDarkMode = () => {
+    localStorage.setItem('dark', true)
+    document.documentElement.setAttribute('data-theme', 'dark')
+    setCheck(true)
   }
-  
+
   const disabledDarkMode = () => {
-    localStorage.setItem("dark", false)
-    document.documentElement.setAttribute("data-theme", "light");
-    setCheck(false);
+    localStorage.setItem('dark', false)
+    document.documentElement.setAttribute('data-theme', 'light')
+    setCheck(false)
   }
-  
+
   const handleSwitch = (e) => {
     if (e.target.checked) enabledDarkMode()
-    if(!e.target.checked) disabledDarkMode()  
+    if (!e.target.checked) disabledDarkMode()
   }
   useEffect(() => {
-    if (localStorage.getItem("dark") === "true") {
+    if (localStorage.getItem('dark') === 'true') {
       enabledDarkMode()
-    }else{
+    } else {
       disabledDarkMode()
     }
   }, [])
 
-  
-  return(
+  return (
   <label className="ui-switch">
-    { isCheck ? <input type="checkbox" onChange={handleSwitch} checked/> : <input type="checkbox" onChange={handleSwitch}/> }
+     <input type="checkbox" onChange={handleSwitch} defaultChecked={isCheck} checked={isCheck}/>
     <div className="slider">
       <div className="circle"></div>
     </div>
