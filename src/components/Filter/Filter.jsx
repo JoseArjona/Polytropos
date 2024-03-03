@@ -33,7 +33,7 @@ export const Filter = () => {
         <span id="label-everyone" className="chip br-green transparent">No Devs</span>
       </label>
       <label >
-        <input id="all" type="radio" name="radio" checked={filter === 'X'} defaultChecked={true} value='X' onChange={handleFilter} />
+        <input id="all" type="radio" name="radio" checked={filter === 'X'} value='X' onChange={handleFilter} />
         <span id="label-all" className="chip br-accent transparent">Todos</span>
       </label>
     </div>

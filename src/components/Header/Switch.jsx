@@ -29,7 +29,7 @@ export default function Switch () {
 
   return (
   <label className="ui-switch">
-     <input type="checkbox" onChange={handleSwitch} defaultChecked={isCheck} checked={isCheck}/>
+     <input type="checkbox" onChange={handleSwitch} checked={isCheck}/>
     <div className="slider">
       <div className="circle"></div>
     </div>
