@@ -4,14 +4,18 @@ import { Shorten } from "../../components/Shorten/Shorten.jsx";
 import { Toaster } from "react-hot-toast";
 ---
 
-<Layout title="PolyShorten">
+<Layout
+  title="PolyShorten- Acortador de URLS Online"
+  description="Polyshorten es un acortador de enlaces online gratuito que te permite acortar tus URLs de forma rápida y sencilla. Crea URLs cortas y personalizadas que sean fáciles de compartir y recordar."
+  img="https://cdn.statically.io/og/fontsize=120px/PolyShorten📎.png"
+>
   <div><Toaster client:only="react" /></div>
   <main class="container">
     <section class="flex f-col mt center middle gap-sm">
       <header class="pt txt-center flex f-col">
         <div>
           <h2>PolyShorten</h2>
-          <p>Acortador de urls.</p>
+          <p>Acortador de urls Online. Crea URLs cortas y personalizadas.</p>
         </div>
       </header>
       <Shorten client:only="react" />

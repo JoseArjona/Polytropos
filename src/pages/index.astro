@@ -5,21 +5,24 @@ import Layout from "../layouts/Layout.astro";
 import Projects from "../data/projects.json";
 ---
 
-<Layout title="Polytropos - Conjunto de Utilidades">
+<Layout
+  title="Polytropos - Conjunto de Utilidades"
+  description="Polytropos es una colección de herramientas y utilidades online que te ayudan a realizar diferentes tareas de forma rápida y eficiente.Polytropos ofrece una amplia gama de herramientas para diferentes necesidades, desde productividad hasta creatividad."
+  img="./banner.png"
+>
   <main class="flex f-col center gap-sm">
     <article>
-      <header class="txt-center">
+      <header class="txt-center pt">
         <h1 class="display-2">
           Bienvenido a <span class="txt-gradient">Polytropos</span>
         </h1>
         <div>
           <p class="txt-bg">Herramientas y Utilidades Random</p>
-          <!--     <p class="txt-md">¿Porqué No?</p> -->
         </div>
       </header>
     </article>
     <section class="flex f-col center middle">
-      <header class="flex f-col center">
+      <header class="flex f-col center container">
         <h2 class="txt-center txt-secondary pb">Utilidades Disponibles:</h2>
         <Filter client:only="react" />
       </header>

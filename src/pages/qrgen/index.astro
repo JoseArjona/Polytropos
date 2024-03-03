@@ -2,16 +2,22 @@
 import Layout from "../../layouts/Layout.astro";
 import { Qrgen } from "../../components/Qrgen/Qrgen.jsx";
 import { Toaster } from "react-hot-toast";
+
+const title = "QRGEN- Generador de QRS";
+const description =
+  "QRGEN es una herramienta online gratuita que te permite generar códigos QR personalizados y fáciles de usar. Crea códigos QR para tus enlaces.";
+const img =
+  "https://cc-og-image.vercel.app/QRGEN%23%EF%B8%8F%E2%83%A3.png?theme=light&md=0&fontFamily=roboto-condensed&fontSize=200px&images=https%3A%2F%2Fcc-vocabulary.netlify.app%2Flogos%2Fcc%2Flettermark.svg%23lettermark";
 ---
 
-<Layout title="QRGEN">
+<Layout title={title} description={description} img={img}>
   <div><Toaster client:only="react" /></div>
   <main class="container">
     <section class="flex f-col mt center middle gap-sm">
       <header class="pt txt-center flex f-col">
         <div>
           <h2>QRGEN</h2>
-          <p>Genera un código qr personalizable.</p>
+          <p>Genera códigos QR personalizados y fáciles de usar.</p>
         </div>
       </header>
       <Qrgen client:only="react" />

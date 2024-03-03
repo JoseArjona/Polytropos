@@ -30,7 +30,8 @@ export const Recorder = () => {
       a.href = url
       a.download = 'captura.webm'
       a.click()
-    })
+      URL.revokeObjectURL(url)
+    }) 
   }
 
   const stopRecording = () => {

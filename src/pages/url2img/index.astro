@@ -2,18 +2,22 @@
 import Layout from "../../layouts/Layout.astro";
 import { Screen2Img } from "../../components/Url2img/Screen2Img.jsx";
 import { Toaster } from "react-hot-toast";
+
+const title = "URL2IMG";
+const description =
+  "Url2Image es una herramienta online gratuita que te permite capturar imágenes completas de tus páginas web. Convierte páginas web en imágenes de alta calidad que puedes guardar en tu ordenador o compartir con otros.";
+const img =
+  "https://cdn.statically.io/og/theme=dark,fontsize=120px/🔗Url2Image📷.png";
 ---
 
-<Layout title="URL2IMG">
+<Layout title={title} description={description} img={img}>
   <div><Toaster client:only="react" /></div>
   <main class="container">
     <section class="flex f-col mt center middle gap-sm">
       <header class="pt txt-center flex f-col">
         <div>
           <h2>Url2Image</h2>
-          <p>
-            Obtén una captura completa de una pagina web a partir de una url.
-          </p>
+          <p>Convierte páginas web en imágenes de alta calidad</p>
         </div>
       </header>
       <Screen2Img client:only="react" />
