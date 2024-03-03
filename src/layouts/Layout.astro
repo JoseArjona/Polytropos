@@ -9,6 +9,7 @@ import "@fontsource/roboto-mono/500.css";
 import "../styles/cactus4.css";
 
 import Header from "../components/Header/Header.astro";
+const today = new Date();
 
 interface Props {
   title: string;
@@ -46,5 +47,23 @@ const { title, description, img } = Astro.props;
   <body>
     <Header />
     <slot />
+    <footer
+      class="flex f-col center middle container txt-center"
+      style="font-size: smaller;"
+    >
+      <div>{today.getFullYear()}</div>
+      <div>
+        Web Hecha con Astro y React por <a
+          href="https://arjmath.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-size: small; color: inherit">JoseArjona</a
+        >
+      </div>
+      <div>
+        Los Recursos son gratuitos y de uso libre. Sin embargo, están limitados
+        por el uso de APIS Publicas.
+      </div>
+    </footer>
   </body>
 </html>
