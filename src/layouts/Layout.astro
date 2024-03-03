@@ -28,19 +28,21 @@ const { title, description, img } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="JoseArjona" />
+    <meta name="robots" content="index" />
 
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
 
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:url" content="https://polytropos.vercel.app" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={img} />
 
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url.href} />
+    <meta property="twitter:url" content="https://polytropos.vercel.app" />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={img} />
@@ -60,22 +62,33 @@ const { title, description, img } = Astro.props;
         >
       </div>
       <div>
-        Los Recursos son gratuitos y de uso libre. Sin embargo, algunos están
-        limitados por el uso de APIS Publicas.
+        <a
+          href="https://librecounter.org/referer/show"
+          target="_blank"
+          style="display: none;"
+        >
+          <img
+            src="https://librecounter.org/counter.svg"
+            referrerPolicy="unsafe-url"
+          />
+        </a>
+        Los Recursos son gratuitos y de uso libre. Sin embargo, algunos están limitados
+        por el uso de APIS Publicas.
       </div>
     </footer>
-  </body><style>
-    body {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
 
-    footer {
-      color: var(--secondary);
-      margin: auto;
-      margin-bottom: 0;
-      padding-bottom: 1.5em;
-    }
-  </style>
+      footer {
+        color: var(--secondary);
+        margin: auto;
+        margin-bottom: 0;
+        padding-bottom: 1.5em;
+      }
+    </style>
+  </body>
 </html>
