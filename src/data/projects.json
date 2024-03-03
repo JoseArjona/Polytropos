@@ -53,5 +53,16 @@
       "generador",
       "Para todos"
     ]
+  },
+  {
+    "title": "TroposRecorder",
+    "body": "Grabadora de pantalla, sencilla y funcional",
+    "href": "/troposrecorder",
+    "img": "https://cc-og-image.vercel.app/TroposRecorder%E2%8F%BA%EF%B8%8F.png?theme=dark&md=0&fontFamily=roboto-condensed&fontSize=200px&images=https%3A%2F%2Fcc-vocabulary.netlify.app%2Flogos%2Fcc%2Flettermark.svg%23letterheart&widths=50&heights=50",
+    "tags": [
+      "grabar",
+      "pantalla",
+      "Para todos"
+    ]
   }
 ]

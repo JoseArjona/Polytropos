@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Recorder } from "../../components/TroposRec/Recorder.jsx";
+import { Toaster } from "react-hot-toast";
+---
+
+<Layout title="TroposRecorder">
+  <div><Toaster client:only="react" /></div>
+  <main class="container">
+    <section class="flex f-col mt center middle gap-sm">
+      <header class="pt txt-center flex f-col">
+        <div>
+          <h2>TroposRecorder</h2>
+          <p>Grabadora de pantalla, sencilla y funcional.</p>
+        </div>
+      </header>
+      <Recorder client:only="react" />
+    </section>
+  </main>
+</Layout>
