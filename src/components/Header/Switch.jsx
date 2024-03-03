@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react'
 
 export default function Switch () {
-  const [isCheck, setCheck] = useState(false)
+  const [isCheck, setCheck] = useState(() => {
+    const dark = localStorage.getItem('dark')
+    return dark === 'true'
+  })
 
   const enabledDarkMode = () => {
     localStorage.setItem('dark', true)
