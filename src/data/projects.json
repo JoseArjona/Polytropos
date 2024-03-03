@@ -8,7 +8,8 @@
       "github",
       "card",
       "Para devs"
-    ]
+    ],
+    "isExternal": true
   },
   {
     "title": "Polyshorten",
@@ -19,7 +20,8 @@
       "urls",
       "acortador",
       "Para todos"
-    ]
+    ],
+    "isExternal": false
   },
   {
     "title": "Ordenode",
@@ -30,7 +32,8 @@
       "nodejs",
       "ordenar archivos",
       "Para devs"
-    ]
+    ],
+    "isExternal": true
   },
   {
     "title": "Url2Image",
@@ -41,7 +44,8 @@
       "Capturas",
       "url2image",
       "Para todos"
-    ]
+    ],
+    "isExternal": false
   },
   {
     "title": "QRGEN",
@@ -52,7 +56,8 @@
       "qr-code",
       "generador",
       "Para todos"
-    ]
+    ],
+    "isExternal": false
   },
   {
     "title": "TroposRecorder",
@@ -63,6 +68,7 @@
       "grabar",
       "pantalla",
       "Para todos"
-    ]
+    ],
+    "isExternal": false
   }
 ]

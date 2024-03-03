@@ -7,13 +7,16 @@ interface Props {
   href: string;
   img: string;
   tags: string[];
+  isExternal: boolean;
 }
 
-const { href, title, body, img, tags } = Astro.props;
+const { href, title, body, img, tags, isExternal } = Astro.props;
+
+const target = isExternal ? "_blank" : "_self";
 ---
 
 <article>
-  <a class="card f-col br-accent gap-sm" href={href} target="_blank">
+  <a class="card f-col br-accent gap-sm" href={href} target={target}>
     <header>
       <picture class="cover">
         <img src={img} alt=`Imagen de portada de la herramienta ${title}` />
