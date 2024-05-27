@@ -44,31 +44,31 @@ export const Screen2Img = () => {
   }
 
   return (
-    <section className="flex f-col">
-      <Form bg="blue" color="txt-contrast" textBtn="Capturar" submitForm={submitForm}>
+    <section className='flex f-col'>
+      <Form bg='blue' color='txt-contrast' textBtn='Capturar' submitForm={submitForm}>
         <fieldset>
-        <label className="input flex f-col gap-nm">
-          Escribe la Url.
-          <input name="url" style={{ maxWidth: '100%' }} type="text" placeholder="URL" required/>
-        </label>
+          <label className='input flex f-col gap-nm'>
+            Escribe la Url.
+            <input name='url' style={{ maxWidth: '100%' }} type='text' placeholder='URL' required />
+          </label>
         </fieldset>
         <fieldset>
-          <label className="input flex f-col gap-nm">
+          <label className='input flex f-col gap-nm'>
             Establece un tamaño en px.
-            <div className="flex f-row">
-            <input aria-label="tamaño en pixeles en la imagen" name="custom" style={{ maxWidth: '100%' }} type="text" pattern="^[0-9/]+$" placeholder="Solo números"/>
-            <span className="secondary txt-contrast radius" style={{ padding: '10px' }}>PX</span>
+            <div className='flex f-row'>
+              <input aria-label='tamaño en pixeles en la imagen' name='custom' style={{ maxWidth: '100%' }} type='text' pattern='^[0-9/]+$' placeholder='Solo números' />
+              <span className='secondary txt-contrast radius' style={{ padding: '10px' }}>PX</span>
             </div>
           </label>
-          <p className="txt-sm txt-secondary">Puedes ignorarlo</p>
+          <p className='txt-sm txt-secondary'>Puedes ignorarlo</p>
         </fieldset>
 
-    </Form>
+      </Form>
       {
         loading && <Spinner />
        }
       {
-        imageUrl && <ImagePreviewer imageUrl={imageUrl} fileName="screenshot" />
+        imageUrl && <ImagePreviewer imageUrl={imageUrl} fileName='screenshot' />
       }
     </section>
 

@@ -21,29 +21,29 @@ export const Shorten = () => {
     const urlShorten = API_SHORTEN + url + CUSTOM_URL + custom + SETTING_URL
     fetch(urlShorten)
       .then((res) => res.json())
-      .then((data) => setShortenUrl(data.data.url))
+      .then((data) => {
+        setShortenUrl(data.data.url)
+        toast('Listo', {
+          icon: '✅',
+          style: {
+            borderRadius: '10px',
+            background: 'var(--background)',
+            color: 'var(--text)'
+          }
+        })
+      })
       .catch(() => {
-        toast('Error, Inténtalo más tarde o Prueba usando otra url',
-          {
-            icon: '✖️',
-            style: {
-              borderRadius: '10px',
-              background: 'var(--background)',
-              color: 'var(--red)'
-            }
-          })
+        toast('Error, Inténtalo más tarde o Prueba usando otra url', {
+          icon: '✖️',
+          style: {
+            borderRadius: '10px',
+            background: 'var(--background)',
+            color: 'var(--red)'
+          }
+        })
       })
       .finally(() => {
         setLoading(false)
-        toast('Listo',
-          {
-            icon: '✅',
-            style: {
-              borderRadius: '10px',
-              background: 'var(--background)',
-              color: 'var(--text)'
-            }
-          })
       })
   }
 
@@ -58,27 +58,62 @@ export const Shorten = () => {
   }
 
   return (
-    <section className="flex f-col">
-      <Form bg="secondary" color="txt-contrast" textBtn="Acortar" submitForm={submitForm}>
+    <section className='flex f-col'>
+      <Form
+        bg='secondary'
+        color='txt-contrast'
+        textBtn='Acortar'
+        submitForm={submitForm}
+      >
         <fieldset>
-        <label className="input flex f-col gap-nm">
-          Escribe la Url.
-          <input name="url" style={{ maxWidth: '100%' }} type="text" placeholder="URL" required/>
-        </label>
+          <label className='input flex f-col gap-nm'>
+            Escribe la Url.
+            <input
+              name='url'
+              style={{ maxWidth: '100%' }}
+              type='text'
+              placeholder='URL'
+              required
+            />
+          </label>
         </fieldset>
         <fieldset>
-          <label className="input flex f-col gap-nm">
+          <label className='input flex f-col gap-nm'>
             Escribe un nombre para tu url.
-            <input name="custom" style={{ maxWidth: '100%' }} type="text" placeholder="tucustomname" required/>
+            <input
+              name='custom'
+              style={{ maxWidth: '100%' }}
+              type='text'
+              placeholder='tucustomname'
+              required
+            />
           </label>
         </fieldset>
       </Form>
       <article style={{ minHeight: '20dvh' }}>
         {loading && <Spinner />}
-        {shortenUrl && <p className="txt-sm">Tu url acortada es: </p> }
-        {shortenUrl && <a className="txt-blue" href={shortenUrl} target="_blank" onClick={handleCopy}>{shortenUrl}</a>}
-        {shortenUrl && <p className="txt-sm txt-secondary">Haz click en la url para copiarla</p>}
-        {shortenUrl && <button className="btn transparent br-secondary" onClick={clean}>Nuevo</button>}
+        {shortenUrl && <p className='txt-sm'>Tu url acortada es: </p>}
+        {shortenUrl && (
+          <a
+            className='txt-blue'
+            href={shortenUrl}
+            target='_blank'
+            onClick={handleCopy}
+            rel='noreferrer'
+          >
+            {shortenUrl}
+          </a>
+        )}
+        {shortenUrl && (
+          <p className='txt-sm txt-secondary'>
+            Haz click en la url para copiarla
+          </p>
+        )}
+        {shortenUrl && (
+          <button className='btn transparent br-secondary' onClick={clean}>
+            Nuevo
+          </button>
+        )}
       </article>
     </section>
   )

@@ -26,11 +26,11 @@ export const ImagePreviewer = ({ imageUrl, fileName = 'img-' }) => {
   }
   return (
     <article>
-        <picture className="mt px flex center" >
-        <img src={imageUrl} alt="QR generado" style={{ maxWidth: '100%', cursor: 'pointer' }} onClick={downloadImage}/>
-        </picture>
-        <p className="txt-sm txt-secondary">Haz click en la imagen para copiarla</p>
-        <a href="" ref={downloadRef} style={{ display: 'none' }} target="_blank" rel="noreferrer" ></a>
+      <picture className='mt px flex center'>
+        <img src={imageUrl} alt='QR generado' style={{ maxWidth: '100%', cursor: 'pointer' }} onClick={downloadImage} />
+      </picture>
+      <p className='txt-sm txt-secondary'>Haz click en la imagen para copiarla</p>
+      <a href='' ref={downloadRef} style={{ display: 'none' }} target='_blank' rel='noreferrer' />
     </article>
   )
 }

@@ -22,7 +22,13 @@ tags.forEach((tag) => {
 
 <footer>
   <ul class="flex f-row f-wrap gap-nm">
-    {chipsTags.map((chip) => <li class={chip.style}>{chip.tag}</li>)}
+    {
+      chipsTags.map((chip) => (
+        <li class={chip.style}>
+          <strong class="no-style">{chip.tag}</strong>
+        </li>
+      ))
+    }
   </ul>
 </footer>
 
@@ -37,5 +43,8 @@ tags.forEach((tag) => {
 
   ul li.chip {
     font-size: 0.6em;
+  }
+  .no-style {
+    font-weight: 500;
   }
 </style>

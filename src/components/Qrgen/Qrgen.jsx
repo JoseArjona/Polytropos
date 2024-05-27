@@ -46,42 +46,42 @@ export const Qrgen = () => {
   }
 
   return (
-    <section className="flex f-col">
-      <Form bg="primary" color="txt-contrast" textBtn="Generar" submitForm={submitForm}>
+    <section className='flex f-col'>
+      <Form bg='primary' color='txt-contrast' textBtn='Generar' submitForm={submitForm}>
         <fieldset>
-        <label className="input flex f-col gap-nm">
-          Escribe la información.
-          <input name="info" style={{ maxWidth: '100%' }} type="text" placeholder="URL" required/>
-        </label>
+          <label className='input flex f-col gap-nm'>
+            Escribe la información.
+            <input name='info' style={{ maxWidth: '100%' }} type='text' placeholder='URL' required />
+          </label>
         </fieldset>
         <fieldset className='grid col-2 sm-col-1 middle'>
-          <label className="input flex f-col gap-nm f-wrap center">
+          <label className='input flex f-col gap-nm f-wrap center'>
             Establece un tamaño en px.
-            <div className="flex f-row">
-            <input aria-label="tamaño en pixeles en la imagen" name="size" style={{ maxWidth: '100%' }} type="text" pattern="^[0-9]+$" placeholder="Solo números" required/>
-            <span className="secondary txt-contrast radius" style={{ padding: '10px' }}>PX</span>
+            <div className='flex f-row'>
+              <input aria-label='tamaño en pixeles en la imagen' name='size' style={{ maxWidth: '100%' }} type='text' pattern='^[0-9]+$' placeholder='Solo números' required />
+              <span className='secondary txt-contrast radius' style={{ padding: '10px' }}>PX</span>
             </div>
           </label>
-          <label className="flex f-col gap-nm ">
+          <label className='flex f-col gap-nm '>
             Establece un color (opcional).
-            <div className="flex f-row between" style={{ padding: '8px' }}>
-            <div className="flex f-row">
-              Color
-            <input className="contrast br-none " name="color" type="color" defaultValue="#000000" />
-            </div>
-            <div className="flex f-row">
-              Fondo
-            <input className="contrast br-none" name="bgcolor" type="color" defaultValue="#ffffff" />
-            </div>
+            <div className='flex f-row between' style={{ padding: '8px' }}>
+              <div className='flex f-row'>
+                Color
+                <input className='contrast br-none ' name='color' type='color' defaultValue='#000000' />
+              </div>
+              <div className='flex f-row'>
+                Fondo
+                <input className='contrast br-none' name='bgcolor' type='color' defaultValue='#ffffff' />
+              </div>
             </div>
           </label>
         </fieldset>
-    </Form>
+      </Form>
       {
         loading && <Spinner />
        }
       {
-        imageUrl && <ImagePreviewer imageUrl={imageUrl} fileName="qr_img" />
+        imageUrl && <ImagePreviewer imageUrl={imageUrl} fileName='qr_img' />
       }
     </section>
 

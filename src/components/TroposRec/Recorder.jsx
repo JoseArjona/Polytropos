@@ -31,7 +31,7 @@ export const Recorder = () => {
       a.download = 'captura.webm'
       a.click()
       URL.revokeObjectURL(url)
-    }) 
+    })
   }
 
   const stopRecording = () => {
@@ -42,19 +42,19 @@ export const Recorder = () => {
   }
 
   return (
-    <div className="flex f-col gap-nm">
-       <label>
-        <input type="checkbox" checked={includeAudio} onChange={(e) => setIncludeAudio(e.target.checked)}/>
+    <div className='flex f-col gap-nm'>
+      <label>
+        <input type='checkbox' checked={includeAudio} onChange={(e) => setIncludeAudio(e.target.checked)} />
         Grabar con audio
       </label>
-       <div className="flex f-row gam-nm">
-       <button className="btn green txt-dark" onClick={handleClick}>
+      <div className='flex f-row gam-nm'>
+        <button className='btn green txt-dark' onClick={handleClick}>
           Grabar Pantalla
         </button>
-        {recorder && <button className="btn red txt-light" onClick={stopRecording}>
+        {recorder && <button className='btn red txt-light' onClick={stopRecording}>
           Detener
         </button>}
-       </div>
+      </div>
     </div>
   )
 }
