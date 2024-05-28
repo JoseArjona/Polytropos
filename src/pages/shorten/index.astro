@@ -1,12 +1,13 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import { Shorten } from "../../components/Shorten/Shorten.jsx";
+import { Stats } from "../../components/Shorten/Stats.jsx";
 import { Toaster } from "react-hot-toast";
 ---
 
 <Layout
   title="PolyShorten- Acortador de URLS Online"
-  description="Polyshorten es un acortador de enlaces online gratuito que te permite acortar tus URLs de forma rápida y sencilla. Crea URLs cortas y personalizadas que sean fáciles de compartir y recordar."
+  description="Polyshorten es un acortador de enlaces y urls online y gratuito. Crea enlaces (urls) cortas y personalizadas que sean fáciles de compartir y recordar. Además, consulta la estadística de tus enlaces."
   img="https://cdn.statically.io/og/fontsize=120px/PolyShorten📎.png"
 >
   <div><Toaster client:only="react" /></div>
@@ -15,10 +16,14 @@ import { Toaster } from "react-hot-toast";
       <header class="pt txt-center flex f-col">
         <div>
           <h2>PolyShorten</h2>
-          <p>Acortador de urls Online. Crea URLs cortas y personalizadas.</p>
+          <p>
+            Acortador de urls Online. Crea URLs cortas y personalizadas. Y
+            Consulta la estadística de tus enlaces.
+          </p>
         </div>
       </header>
       <Shorten client:only="react" />
+      <Stats client:only="react" />
     </section>
   </main>
 </Layout>

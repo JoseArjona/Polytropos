@@ -4,47 +4,53 @@ import { Form } from '../Global/Form.jsx'
 import toast from 'react-hot-toast'
 import { copyClipboard } from '../../lib/utils.ts'
 
-const API_SHORTEN = 'https://ulvis.net/API/write/get?url='
-const CUSTOM_URL = '&custom='
-const SETTING_URL = '&private=1&type=json'
+const API_SHORTEN = 'https://spoo.me/?url='
+const CUSTOM_URL = '&alias='
 
 export const Shorten = () => {
   const [loading, setLoading] = useState(false)
   const [shortenUrl, setShortenUrl] = useState()
 
-  const submitForm = (e) => {
+  const submitForm = async (e) => {
     e.preventDefault()
     setLoading(true)
     const data = new FormData(e.target)
     const url = data.get('url')
     const custom = data.get('custom') || 'Shorten'
-    const urlShorten = API_SHORTEN + url + CUSTOM_URL + custom + SETTING_URL
-    fetch(urlShorten)
-      .then((res) => res.json())
-      .then((data) => {
-        setShortenUrl(data.data.url)
-        toast('Listo', {
-          icon: '✅',
-          style: {
-            borderRadius: '10px',
-            background: 'var(--background)',
-            color: 'var(--text)'
-          }
-        })
+    const urlShorten = API_SHORTEN + url + CUSTOM_URL + custom
+    const res = await fetch(urlShorten, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        Accept: 'application/json'
+      },
+      body: {
+        urlShorten
+      }
+    })
+    if (!res.ok) {
+      toast('Error, Inténtalo más tarde o Prueba usando otra url', {
+        icon: '✖️',
+        style: {
+          borderRadius: '10px',
+          background: 'var(--background)',
+          color: 'var(--red)'
+        }
       })
-      .catch(() => {
-        toast('Error, Inténtalo más tarde o Prueba usando otra url', {
-          icon: '✖️',
-          style: {
-            borderRadius: '10px',
-            background: 'var(--background)',
-            color: 'var(--red)'
-          }
-        })
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+      setLoading(false)
+      return
+    }
+    const json = await res.json()
+    setShortenUrl(json.short_url)
+    setLoading(false)
+    toast('Listo', {
+      icon: '✅',
+      style: {
+        borderRadius: '10px',
+        background: 'var(--background)',
+        color: 'var(--text)'
+      }
+    })
   }
 
   const handleCopy = () => {
@@ -79,7 +85,7 @@ export const Shorten = () => {
         </fieldset>
         <fieldset>
           <label className='input flex f-col gap-nm'>
-            Escribe un nombre para tu url.
+            Escribe un alias para tu url.
             <input
               name='custom'
               style={{ maxWidth: '100%' }}
@@ -90,7 +96,7 @@ export const Shorten = () => {
           </label>
         </fieldset>
       </Form>
-      <article style={{ minHeight: '20dvh' }}>
+      <article className='mb'>
         {loading && <Spinner />}
         {shortenUrl && <p className='txt-sm'>Tu url acortada es: </p>}
         {shortenUrl && (
@@ -115,6 +121,7 @@ export const Shorten = () => {
           </button>
         )}
       </article>
+
     </section>
   )
 }
