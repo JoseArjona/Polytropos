@@ -3,12 +3,14 @@ import Layout from "../../layouts/Layout.astro";
 import { Shorten } from "../../components/Shorten/Shorten.jsx";
 import { Stats } from "../../components/Shorten/Stats.jsx";
 import { Toaster } from "react-hot-toast";
+const slug = Astro.url.pathname
 ---
 
 <Layout
   title="PolyShorten- Acortador de URLS Online"
   description="Polyshorten es un acortador de enlaces y urls online y gratuito. Crea enlaces (urls) cortas y personalizadas que sean fáciles de compartir y recordar. Además, consulta la estadística de tus enlaces."
   img="https://cdn.statically.io/og/fontsize=120px/PolyShorten📎.png"
+  slug={slug}
 >
   <div><Toaster client:only="react" /></div>
   <main class="container">

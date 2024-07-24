@@ -8,9 +8,10 @@ const description =
   "TroposRecorder es una herramienta online gratuita que te permite grabar tu pantalla de forma rápida y sencilla. Crea grabaciones de pantalla de alta calidad que puedes guardar en tu ordenador o compartir con otros.";
 const img =
   "https://cc-og-image.vercel.app/TroposRecorder%E2%8F%BA%EF%B8%8F.png?theme=dark&md=0&fontFamily=roboto-condensed&fontSize=200px&images=https%3A%2F%2Fcc-vocabulary.netlify.app%2Flogos%2Fcc%2Flettermark.svg%23letterheart&widths=50&heights=50";
+const slug = Astro.url.pathname;
 ---
 
-<Layout title={title} description={description} img={img}>
+<Layout title={title} description={description} img={img} slug={slug}>
   <div><Toaster client:only="react" /></div>
   <main class="container">
     <section class="flex f-col mt center middle gap-sm">

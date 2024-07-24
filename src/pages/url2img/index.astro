@@ -8,9 +8,10 @@ const description =
   "Url2Image es una herramienta online gratuita que te permite capturar imágenes completas de tus páginas web. Convierte páginas web en imágenes de alta calidad que puedes guardar en tu ordenador o compartir con otros.";
 const img =
   "https://cdn.statically.io/og/theme=dark,fontsize=120px/🔗Url2Image📷.png";
+const slug = Astro.url.pathname;
 ---
 
-<Layout title={title} description={description} img={img}>
+<Layout title={title} description={description} img={img} slug={slug}>
   <div><Toaster client:only="react" /></div>
   <main class="container">
     <section class="flex f-col mt center middle gap-sm">
